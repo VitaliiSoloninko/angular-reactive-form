@@ -14,5 +14,7 @@ export class LoginComponent {
 		password: new FormControl(''),
 	})
 
-	onSubmit() {}
+	onSubmit() {
+		console.log(this.form)
+	}
 }
