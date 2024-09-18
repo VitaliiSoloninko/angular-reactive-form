@@ -33,6 +33,10 @@
 			/>
 		</div>
 	</div>
+	@if (form.value.passwords?.password !== form.value.passwords?.confirmPassword)
+	{
+	<p class="control-error">Passwords are not the same</p>
+	}
 
 	<hr />
 
