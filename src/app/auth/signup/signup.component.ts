@@ -81,6 +81,22 @@ export class SignupComponent {
 		agree: new FormControl(false, { validators: [Validators.required] }),
 	})
 
+	get emailIsInvalid() {
+		return (
+			this.form.controls.email.touched &&
+			this.form.controls.email.dirty &&
+			this.form.controls.email.invalid
+		)
+	}
+
+	get passwordsAreNotSame() {
+		return (
+			this.form.controls.passwords.controls.confirmPassword.invalid &&
+			this.form.value.passwords?.password !==
+				this.form.value.passwords?.confirmPassword
+		)
+	}
+
 	onSubmit() {
 		if (this.form.invalid) {
 			console.log('INVALID FORM')
